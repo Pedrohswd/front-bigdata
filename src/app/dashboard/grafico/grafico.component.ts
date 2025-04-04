@@ -64,7 +64,7 @@ export class GraficoComponent implements OnInit {
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) return; // 👉 evita erro no SSR
 
-    this.http.get<{ dados: Tomada[] }>('http://localhost:4000/dados').subscribe(response => {
+    this.http.get<{ dados: Tomada[] }>('https://api-bigdata.onrender.com/dados').subscribe(response => {
       const dados = response.dados;
 
       const lineLabels = dados.map(d =>
